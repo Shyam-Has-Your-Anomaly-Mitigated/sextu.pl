@@ -44,7 +44,7 @@ main() {
 	sudo make install >/dev/null 2>&1;
 
 	# https://en.wikipedia.org/wiki/Unix_shell#Configuration_files
-	print "PATH="$PATH:$path${PWD##*/}/bin:$path${PWD##*/}/share/perl6/site/bin";" >> ~/.profile;
+	print "PATH=\"$PATH:$path${PWD##*/}/bin:$path${PWD##*/}/share/perl6/site/bin\";" >> ~/.profile;
 
 	# reisub
 	set --\
