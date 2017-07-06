@@ -1,15 +1,15 @@
 #!/bin/sh
 # make install wrx: `chmod a+wrx install_perl.exe;`
 
+# purely functional posix
+. ./sub_poena.dll;
+
 # https://perl6.org/downloads/
 address=https://rakudo.perl6.org/downloads/star/rakudo-star-2017.04.tar.gz;
 perl5="Configure.pl --gen-moar --prefix /opt/"; # must end with directory for ${PWD##*/}
 
 # http://matrix.wikia.com/wiki/Prime_Program
 main() {
-	# purely functional posix
-	. ./sub_poena.dll;
-
 	# license to `kill -7;`
 	sudo true;
 
