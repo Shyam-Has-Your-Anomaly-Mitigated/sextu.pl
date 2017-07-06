@@ -40,7 +40,7 @@ main() {
 	sudo perl $perl5"${PWD##*/}" >/dev/null 2>&1;
 
 	# make it so! 🖖
-	sudo make install;
+	sudo make install >/dev/null 2>&1;
 
 	# reisub
 	set --\
