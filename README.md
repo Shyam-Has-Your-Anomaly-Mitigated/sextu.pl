@@ -1,5 +1,5 @@
 # the art of computer programming
-piet is instructional meta art  
+piet is steganographic meta art  
 prolog is photographic raster art  
 haskell is scalable vector art  
 assembly is spriteful pixel art  
