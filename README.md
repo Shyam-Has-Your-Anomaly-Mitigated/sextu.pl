@@ -6,7 +6,7 @@ print this to console:
 #!/bin/perl
 #`[ℝeal Perl Programmers] use Ethics;
 #`[
-	Real Perl Programmers prefer things to be visually distinct. 
+	ℝeal Perl Programmers prefer things to be visually distinct. 
 	ℝeal Perl Programmers...
 ]
 ```
