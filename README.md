@@ -1,5 +1,6 @@
 # todo
-`use Ethics;`  is pythonic `import this;`  
+perli `use Ethics;`  is pythonic `import this;`  
+`use Perliament;` is...
 ## Ethics
 print this to console:
 ```perl6
@@ -11,6 +12,7 @@ print this to console:
 	ℝeal Perl Programmers...
 =end comment
 ```
+*demonstrates all syntax of [docommentation](https://docs.perl6.org/language/syntax#Comments)*
 
 # the art of computer programming
 piet is steganographic meta art  
