@@ -1,9 +1,25 @@
 =head3 Input:
-=item posix C<sh>
-=item perl5 C<perl>
+
+=over
+
+=item * posix C<sh>
+
+=item * perl5 C<perl>
+
+=back
 
 =head3  Process:
-=item C<./install_perl.exe>
+
+=over
+
+=item * C<./install_perl.exe>
+
+=back
 
 =head3  Output:
-=item C<perl6>
+
+=over
+
+=item * C<perl6>
+
+=back
