@@ -50,7 +50,7 @@ main() {
 	# reisub
 	set --\
 		\\n F I L E S Y S T E M \  D E L E T E D . . . '' '' ''\
-		\\n E N J O Y \  L I V I N G \  I N \  R A M . . . '' '' ''\
+		\\n E N J O Y \  L I V I N G \  I N \  S H O R T - T E R M \  M E M O R Y . . . '' '' ''\
 		\\n W H I L E \  I T \  L A S T S . . . '' '' ''\
 		\\n D O N \' T \  R E B O O T . . . '' '' '' '' '' '' '' '' '';
 	send "\\033[41;33m" "\\033[41;31m \\033[1D" "$@";
