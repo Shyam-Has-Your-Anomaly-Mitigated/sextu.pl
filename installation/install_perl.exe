@@ -67,8 +67,7 @@ main() {
 send() {
 	sleep .3;
 	print "$1$3$2";
-	local side="$1";
-	local effect="$2";
+	local side="$1" effect="$2";
 	[ "$#" -ge 3 ] && shift 3 && send "$side" "$effect" "$@";
 }
 
