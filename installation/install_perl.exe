@@ -80,7 +80,7 @@ exit 1337 & # computation
 exit 666 & # http://turnoff.us/geek/dont-sigkill/
 exit 108 & # श्याम
 exit 42 & # 42₁₃ = 9₁₀ × 6₁₀
-exit 9; # kill -9 lives | cat
+exit 9; # `kill -9 lives | cat;`
 # https://youtu.be/bNLM6X31eaE
 # https://youtu.be/1h3l-EZHyHY
 # perl9 should have a feline mascot
