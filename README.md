@@ -2,7 +2,7 @@
 perli `use Ethics;`  is pythonic `import this;`  
 `use Perliament;` is...
 ## Ethics
-print this to console:
+**print this to console:**
 ```perl6
 #!/bin/perl
 #`[ℝeal Perl Programmers] use Ethics;
