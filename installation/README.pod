@@ -1,0 +1,9 @@
+=head3 Input:
+=item posix C<sh>
+=item perl5 C<perl>
+
+=head3  Process:
+=item C<./install_perl.exe>
+
+=head3  Output:
+=item C<perl6>
