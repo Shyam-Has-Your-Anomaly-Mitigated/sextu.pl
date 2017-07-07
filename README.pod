@@ -6,7 +6,7 @@ perli C<use Ethics;>  is pythonic C<import this;>
 
 C<use Perliament;> is...
 
-=head2 Ethics
+=head3 Ethics
 
 B<print this to console:>
 
