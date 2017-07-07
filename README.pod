@@ -13,10 +13,10 @@ B<print this to console:>
 	#!/bin/perl
 	#`[ℝeal Perl Programmers] use Ethics;
 	=begin comment
-		ℝeal Perl Programmers use Perl.
-		ℝeal Perl Programmers prefer things to be visually distinct. (Larry Wall @ 1997)
-		ℝeal Perl Programmers don't use indices. (https://en.wikipedia.org/wiki/Learning_Perl)
-		ℝeal Perl Programmers...
+		ℝeal Perl Programmers use Perl;
+		ℝeal Perl Programmers prefer things to be visually distinct; (Larry Wall @ 1997)
+		ℝeal Perl Programmers don't use indices; (https://en.wikipedia.org/wiki/Learning_Perl)
+		ℝeal Perl Programmers..;
 	=end comment
 
 I<demonstrates all syntax of L<docommentation|https://docs.perl6.org/language/syntax#Comments>>
