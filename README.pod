@@ -4,7 +4,7 @@
 
 perli C<use Ethics;>  is pythonic C<import this;>
 
-C<use Perliament;> is...
+C<use Perliament::Shyam;> is C<my $tyle;>
 
 =head3 Ethics
 
