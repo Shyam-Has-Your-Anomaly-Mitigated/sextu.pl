@@ -8,17 +8,21 @@ C<use Perliament;> is...
 
 =head2 Ethics
 
-**print this to console:**
+B<print this to console:>
 
-=begin code
-#!/bin/perl
-#`[ℝeal Perl Programmers] use Ethics;
-=begin comment
-	ℝeal Perl Programmers prefer things to be visually distinct. (Larry Wall @ 1997)
-	ℝeal Perl Programmers don't use indices. (https://en.wikipedia.org/wiki/Learning_Perl)
-	ℝeal Perl Programmers...
-=end comment
-=end code
+C<#!/bin/perl>
+
+C<#`[ℝeal Perl Programmers] use Ethics;>
+
+C<=begin comment>
+
+C<	ℝeal Perl Programmers prefer things to be visually distinct. (Larry Wall @ 1997)>
+
+C<	ℝeal Perl Programmers don't use indices. (https://en.wikipedia.org/wiki/Learning_Perl)>
+
+C<	ℝeal Perl Programmers...>
+
+C<=end comment>
 
 I<demonstrates all syntax of L<docommentation|https://docs.perl6.org/language/syntax#Comments>>
 
