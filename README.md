@@ -1,3 +1,15 @@
+# todo
+`use Ethics;`  is pythonic `import this;`  
+## Ethics
+print this to console:
+```perl6
+#!/bin/perl
+#`[ℝeal Perl Programmers] use Ethics;
+#`[
+	ℝeal Perl Programmers...
+]
+```
+
 # the art of computer programming
 piet is steganographic meta art  
 prolog is photographic raster art  
