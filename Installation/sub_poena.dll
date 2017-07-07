@@ -3,8 +3,8 @@
 # https://github.com/mikeplus64/fun.sh
 # http://quasimal.com/posts/2012-05-21-funsh.html
 
-print() { 
-    echo -n "$@" 
+print() {
+    echo -n "$@"
 }
 
 cons() {
@@ -20,12 +20,12 @@ take() {
     command \head -n -${1}
 }
 
-tail() { 
-    drop 1 
+tail() {
+    drop 1
 }
 
-head() { 
-    take 1 
+head() {
+    take 1
 }
 
 last() {
@@ -66,35 +66,35 @@ scanl() {
     done
 }
 
-lambda() { 
-    lam() { 
-        unset last 
+lambda() {
+    lam() {
+        unset last
         unset ars
-        for last; do 
+        for last; do
             shift
-            if [[ $last = "." || $last = ":" || $last = "->" || $last = "→" ]]; then 
+            if [[ $last = "." || $last = ":" || $last = "->" || $last = "→" ]]; then
                 echo "$@"
                 return
-            else 
+            else
                 echo "read $last;"
             fi
-        done 
+        done
     }
     y="stdin"
-    for i in "$@"; do 
-        if [[ $i = "." || $i = ":" || $i = "->" || $i = "→" ]]; then 
+    for i in "$@"; do
+        if [[ $i = "." || $i = ":" || $i = "->" || $i = "→" ]]; then
             y="args"
-        fi 
-    done 
+        fi
+    done
     if [[ "$y" = "stdin" ]]; then
         read fun
         eval $(lam "$@ : $fun")
-    else 
+    else
         eval $(lam "$@")
     fi
     unset y
     unset i
-    unset fun 
+    unset fun
 }
 
 #alias -g 'λ'="lambda "
@@ -107,15 +107,15 @@ append() {
     done
 }
 
-sum() { 
-    foldl λ a b . 'echo $(($a + $b))' 
+sum() {
+    foldl λ a b . 'echo $(($a + $b))'
 }
 
-product() { 
-    foldl λ a b . 'echo $(($a * $b))' 
+product() {
+    foldl λ a b . 'echo $(($a * $b))'
 }
 
-factorial() { 
-    seq 1 $1 | product 
+factorial() {
+    seq 1 $1 | product
 }
 

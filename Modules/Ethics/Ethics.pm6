@@ -28,4 +28,3 @@
 # ; my $terminal = 'overlapping chars'
 ; s:g/ℝ/R/
 ; .print
-; exit 6
