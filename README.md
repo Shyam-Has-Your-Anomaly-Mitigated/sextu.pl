@@ -5,11 +5,11 @@ print this to console:
 ```perl6
 #!/bin/perl
 #`[ℝeal Perl Programmers] use Ethics;
-#`[
+=begin comment
 	ℝeal Perl Programmers prefer things to be visually distinct. (Larry Wall @ 1997)
 	ℝeal Perl Programmers don't use indices. (https://en.wikipedia.org/wiki/Learning_Perl)
 	ℝeal Perl Programmers...
-]
+=end comment
 ```
 
 # the art of computer programming
