@@ -9,9 +9,9 @@ B<print this to console:>
 	#!/usr/bin/env perl
 	#`[ℝeal Perl Programmers] use Ethics;
 	=begin comment
-		ℝeal Perl Programmers use ...;
-		ℝeal Perl Programmers use ...;
-		ℝeal Perl Programmers use ...;
+		ℝeal Perl Programmers ..;
+		ℝeal Perl Programmers ..;
+		ℝeal Perl Programmers ..;
 	=end comment
 
 I<demonstrates all syntax of L<docommentation|https://docs.perl6.org/language/syntax#Comments>>
