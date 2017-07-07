@@ -12,7 +12,7 @@
 
 =over
 
-=item * C<./install_perl.exe>
+=item * C<./install_perl.exe;>
 
 =back
 
