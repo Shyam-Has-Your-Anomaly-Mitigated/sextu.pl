@@ -2,11 +2,23 @@
 
 =head3 road_map
 
+=head2 key_sec()
+
+deadlocked with other commitments versus licensing; in the mean time explore other tech...probably steganography
+
+=head2 key_chk()
+
+goto L<scripting|https://www.open.edu.au/courses/it/rmit-university-scripting-language-programming--cpt223-2017> assignments; checksum injection...this time, gotta crack 'ém all! :D
+
+=head2 key_xch()
+
 need to figure out how I want to change passwords... f(old.key, new.key) = buffer.buf
 
 password fields: old.key=p0, new.key=p1
 
 C<key_xch($old_file, $new_file)>
+
+C<¿¿¿TIME TO RESET???> -> C<¡¡¡TIME TO RESET!!!>
 
 =head3 key_gen()
 

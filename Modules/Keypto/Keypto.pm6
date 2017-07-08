@@ -13,9 +13,9 @@
 	# csv header
 	; my @field = {
 		; for @_ {
-			; $_ = "$0\n" if $_ ~~ /(.+)\:min/
-			; $_ = ':' if $_ ~~ /^\:/
-			; $_ = $0 if $_ ~~ /(.+)\:.*/
+			; $_ = "$0\n" if $_ ~~ /^(.+)\:min$/
+			; $_ = ':' if $_ ~~ /^\:.*$/
+			; $_ = $0 if $_ ~~ /^(.+)\:.*$/
 		}
 		; @_
 	}(split(',', shift @line).map({; .trim}))
@@ -24,9 +24,9 @@
 	; my $index = $_
 	; @field.push: @field.splice($_, 1)
 	# csv_liner
-	; $csv ~~ /(.+)\.csv/
+	; $csv ~~ /^(.+)\.csv$/
 	; my $key = "$0_" ~ DateTime.now.posix ~ ".key"
-	; my $magic = "\n\n¿¿¿TIME_TO_RESET???\n"
+	; my $magic = "\n\n¿¿¿TIME TO RESET???\n"
 	; my $gen = "LAST RESET @ " ~ DateTime.now ~ $magic
 	; for @line {
 		; my @value_tmp = split(',', $_).map({; .trim})
@@ -48,10 +48,10 @@
 		; my @gotcha
 		; @gotcha.push((@field.grep: /^\:$/, :k)[0])
 		; $gen ~= "\n" ~ @value[@gotcha[* - 1]] ~ "\n"
-		; @gotcha.push((@field.grep: /.+\n/, :k)[0])
+		; @gotcha.push((@field.grep: /^.+\n$/, :k)[0])
 		; $gen ~= "\t" ~ @field[@gotcha[* - 1]].chop ~ ': '
 		; if 'max' ∈ @field {
-			; @gotcha.push((@field.grep: /max/, :k)[0])
+			; @gotcha.push((@field.grep: /^max$/, :k)[0])
 			; $gen ~=
 				'charray' ∈ @field
 				?? key_rng(+@value[@gotcha[* - 2]], +@value[@gotcha[* - 1]], @value[* - 1])
