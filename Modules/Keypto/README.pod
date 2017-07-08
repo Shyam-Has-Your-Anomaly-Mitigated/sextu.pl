@@ -1,0 +1,40 @@
+=head1 Keypto
+
+=head3 road_map
+
+need to figure out how I want to change passwords... f(old.key, new.key) = buffer.buf
+
+password fields: old.key=p0, new.key=p1
+
+=head3 key_gen()
+
+C<key_gen($file)> where C<$file> is in a L<CSV|https://en.wikipedia.org/wiki/Comma-separated_values> format
+
+B<input demo:> C<./mold.csv>
+
+B<output demo:> C<./old.key> C<./new.key>
+
+B<CSV format:>
+
+first line is (custom) header; soft-coding means "free software" (but more effort)
+
+field headers are case-insensitively alphabetic (collision-prone)
+
+primary field: C<:csv_field> (EG C<:address>)
+
+required field: C<key_field:min> (EG C<p:min>)
+
+optional field: C<max>
+
+special optional field: C<charray> (the only multi-valued field)
+
+creative fields: C<key_field:csv_field> (EG C<p:phone>, C<u:user>, C<e:email>)
+
+I<for "creative fields", C<csv_field> will use the first char for C<key_field>; as demonstrated>
+
+=head3 key_rng()
+
+C<key_rng($min, $max=$min, @char=(...))> returns a random string
+
+C<@char> is all-case alphanumerical by default
+
