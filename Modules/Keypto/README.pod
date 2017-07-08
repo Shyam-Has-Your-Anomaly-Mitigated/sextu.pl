@@ -4,6 +4,24 @@
 
 =head3 road_map
 
+C<key_ing()> (ran$omware)
+
+C<key_cut()>, C<key_tip()>, C<key_bow()>, C<sho_ldr()> (L<anatomy|https://en.wikipedia.org/wiki/Key_(lock)>)
+
+C<key_off()> (to take as a controlling input datum; this logic keys off the users social security number...is that a bitmask?)
+
+C<key_pad()> (keyboard, for typing; non-instructional typing)
+
+C<key_pal()> (penpal via email)
+
+C<key_set()> (instruction-set, but could just be a set of keys)
+
+C<key_way()> (keyhole)
+
+=head4 key_ces()
+
+reverse engineer C<key_sec()>
+
 =head4 key_sec()
 
 deadlocked with other commitments versus licensing; in the mean time explore other tech...probably steganography
