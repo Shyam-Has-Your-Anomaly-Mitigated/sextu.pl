@@ -19,10 +19,15 @@
 		}
 		; @_
 	}(split(',', shift @line).map({; .trim}))
-	; $_ = @field.grep('charray',:k)[0]
-	; my $outdex = @field - $_ - 1
-	; my $index = $_
-	; @field.push: @field.splice($_, 1)
+	; my $charray = 'charray' ∈ @field
+	; my $index
+	; my $outdex
+	; if $charray {
+		; $_ = @field.grep('charray', :k)[0]
+		; $outdex = @field - $_ - 1
+		; $index = $_
+		; @field.push: @field.splice($_, 1)
+	}
 	# csv_liner
 	; $csv ~~ /^(.+)\.csv$/
 	; my $key = "$0_" ~ DateTime.now.posix ~ ".key"
@@ -30,35 +35,44 @@
 	; my $gen = "LAST RESET @ " ~ DateTime.now ~ $magic
 	; for @line {
 		; my @value_tmp = split(',', $_).map({; .trim})
-		; my @value =
-			$index == 0
-			?? [
-				|@value_tmp.splice(@value_tmp - $outdex, @value_tmp - 1)
-				, @value_tmp
-			] !! [
-				|@value_tmp.splice(0, $index)
-				, |@value_tmp.splice(@value_tmp - $outdex, @value_tmp - 1)
-				, @value_tmp
-			]
-		# WTF
-		; @value[* - 1] = EVAL(@value[* - 1].join(',')).map({; .flat}).flat
+		; my @value
+		; if $charray {
+			; @value =
+				$index == 0
+				?? [
+					|@value_tmp.splice(@value_tmp - $outdex, @value_tmp - 1)
+					, @value_tmp
+				] !! [
+					|@value_tmp.splice(0, $index)
+					, |@value_tmp.splice(@value_tmp - $outdex, @value_tmp - 1)
+					, @value_tmp
+				]
+		} else {
+			; @value = @value_tmp
+		}
+		; if $charray {
+			# WTF
+			; @value[* - 1] = EVAL(@value[* - 1].join(',')).map({; .flat}).flat
+		}
 		# primary key is ':'
 		# key_rng() has \n
 		# @charray is at the end
 		; my @gotcha
-		; @gotcha.push((@field.grep: /^\:$/, :k)[0])
-		; $gen ~= "\n" ~ @value[@gotcha[* - 1]] ~ "\n"
+		; if $charray {
+			; @gotcha.push((@field.grep: /^\:$/, :k)[0])
+			; $gen ~= "\n" ~ @value[@gotcha[* - 1]]
+		}
 		; @gotcha.push((@field.grep: /^.+\n$/, :k)[0])
-		; $gen ~= "\t" ~ @field[@gotcha[* - 1]].chop ~ ': '
+		; $gen ~= "\n\t" ~ @field[@gotcha[* - 1]].chop ~ ': '
 		; if 'max' ∈ @field {
 			; @gotcha.push((@field.grep: /^max$/, :k)[0])
 			; $gen ~=
-				'charray' ∈ @field
+				$charray
 				?? key_rng(+@value[@gotcha[* - 2]], +@value[@gotcha[* - 1]], @value[* - 1])
 				!! key_rng(+@value[@gotcha[* - 2]], +@value[@gotcha[* - 1]])
 		} else {
 			; $gen ~=
-				'charray' ∈ @field
+				$charray
 				?? key_rng(+@value[@gotcha[* - 1]], +@value[@gotcha[* - 1]], @value[* - 1])
 				!! key_rng(+@value[@gotcha[* - 1]])
 		}

@@ -52,7 +52,7 @@ field headers are case-insensitively alphabetic (collision-prone)
 
 primary field: C<:csv_field> (EG C<:address>)
 
-required field: C<key_field:min> (EG C<p:min>)
+required field: C<key_field:min> (EG C<p:min>, p for password; what this field is for)
 
 optional field: C<max>
 
@@ -60,7 +60,7 @@ special optional field: C<charray> (the only multi-valued field)
 
 creative fields: C<key_field:csv_field> (EG C<p:phone>, C<u:user>, C<e:email>)
 
-I<for "creative fields", C<csv_field> will use the first char for C<key_field>; as demonstrated>
+creative fieldz: C<shared_field> (EG C<name>, C<address>)
 
 =head3 key_rng()
 
