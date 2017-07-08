@@ -8,10 +8,6 @@
 
 deadlocked with other commitments versus licensing; in the mean time explore other tech...probably steganography
 
-=head4 key_chk()
-
-goto L<scripting|https://www.open.edu.au/courses/it/rmit-university-scripting-language-programming--cpt223-2017> assignments; checksum injection...this time, gotta crack 'ém all! :D
-
 =head4 key_xch()
 
 need to figure out how I want to change passwords... f(old.key, new.key) = buffer.buf

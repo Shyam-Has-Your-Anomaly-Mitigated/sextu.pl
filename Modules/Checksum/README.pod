@@ -1,0 +1,22 @@
+=encoding utf8
+
+=head1 Checksum
+
+=head3 road_map
+
+=head4 inject()
+
+goto L<scripting|https://www.open.edu.au/courses/it/rmit-university-scripting-language-programming--cpt223-2017> assignments; checksum injection...this time, gotta crack 'ém all! :D
+
+inject checksum at nth line
+
+C<inject($file, $line, $algorithm)>
+
+=head4 checksum()
+
+C<checksum($file, $algorithm)>
+
+=head4 _()
+
+modulated algorithms
+
