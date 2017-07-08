@@ -6,6 +6,8 @@ need to figure out how I want to change passwords... f(old.key, new.key) = buffe
 
 password fields: old.key=p0, new.key=p1
 
+C<key_xch($old_file, $new_file)>
+
 =head3 key_gen()
 
 C<key_gen($file)> where C<$file> is in a L<CSV|https://en.wikipedia.org/wiki/Comma-separated_values> format

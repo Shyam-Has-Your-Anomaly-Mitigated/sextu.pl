@@ -1,13 +1,12 @@
 #!/usr/bin/env perl6
-
 #`<
-TODO @ key_rng: Char @char
-WTF I found another viminal
+	TODO @ key_rng: Char @char
+	WTF I found another viminal
 >
-
 ; use v6
 ; use MONKEY-SEE-NO-EVAL
 ; unit module Keypto
+
 
 ; sub key_gen(Str $csv) is export {
 	; my @line = $csv.IO.lines;
@@ -19,17 +18,18 @@ WTF I found another viminal
 			; $_ = $0 if $_ ~~ /(.+)\:.*/
 		}
 		; @_
-	}(split(',', shift @line).map({.trim}))
+	}(split(',', shift @line).map({; .trim}))
 	; $_ = @field.grep('charray',:k)[0]
 	; my $outdex = @field - $_ - 1
 	; my $index = $_
 	; @field.push: @field.splice($_, 1)
 	# csv_liner
 	; $csv ~~ /(.+)\.csv/
-	; my $key = "$0.key"
-	; my $gen
+	; my $key = "$0_" ~ DateTime.now.posix ~ ".key"
+	; my $magic = "\n\n¿¿¿TIME_TO_RESET???\n"
+	; my $gen = "LAST RESET @ " ~ DateTime.now ~ $magic
 	; for @line {
-		; my @value_tmp = split(',', $_).map({.trim})
+		; my @value_tmp = split(',', $_).map({; .trim})
 		; my @value =
 			$index == 0
 			?? [
@@ -41,14 +41,13 @@ WTF I found another viminal
 				, @value_tmp
 			]
 		# WTF
-		; @value[* - 1] = EVAL(@value[* - 1].join(',')).map({.flat}).flat
+		; @value[* - 1] = EVAL(@value[* - 1].join(',')).map({; .flat}).flat
 		# primary key is ':'
 		# key_rng() has \n
 		# @charray is at the end
-		#.map({.trim})
 		; my @gotcha
 		; @gotcha.push((@field.grep: /^\:$/, :k)[0])
-		; $gen ~= @value[@gotcha[* - 1]] ~ "\n"
+		; $gen ~= "\n" ~ @value[@gotcha[* - 1]] ~ "\n"
 		; @gotcha.push((@field.grep: /.+\n/, :k)[0])
 		; $gen ~= "\t" ~ @field[@gotcha[* - 1]].chop ~ ': '
 		; if 'max' ∈ @field {
@@ -63,14 +62,8 @@ WTF I found another viminal
 				?? key_rng(+@value[@gotcha[* - 1]], +@value[@gotcha[* - 1]], @value[* - 1])
 				!! key_rng(+@value[@gotcha[* - 1]])
 		}
-		; @gotcha.reverse.map({; @field.splice($_, 1); @value.splice($_, 1)})
-		; @value.pop
-		; @field.pop
-		; $gen ~= "\n"
-		; say ''
-		; say @gotcha
-		; say @field.map({$_~"\n"}).flat
-		; say @value.map({$_~"\n"}).flat
+		; for 0..@field-2 {; $gen ~= "\n\t@field[$_]: @value[$_]" if $_ ∉ @gotcha}
+		; $gen ~= $magic
 	}
 	; spurt $key, $gen
 }
