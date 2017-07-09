@@ -1,3 +1,5 @@
+=encoding utf8
+
 =head1 todo
 
 C<use Perliament::Shyam;> is C<my $tyle;>
@@ -18,3 +20,13 @@ L<java|http://www.webmd.com/diet/news/20061011/decaf-coffee-isnt-caffeine-free> 
 python_is_crayonic_fingerpainting_art
 
 perl is textual ascii art
+
+=head1 text-based user interfaces
+
+the command-line is (usually) a single line; usually [A] "there is one line (DOTADIW)", but there can be "multiple lines"; either [B] "multiple lines, doing the same thing", or [C] "multiple lines, doing different things"...I'm most interested in C (A ∧ B are non-trivial)
+
+the console is everything else; the canvas/dimension/reality
+
+the terminal is the universal set (set theory)
+
+the interface is either free-cursor, cursor-free (KDE), or multi-cursor; either "multiple cursors, doing the same thing", or "multiple cursors, doing different things"...keyboard-driven environments are superior
