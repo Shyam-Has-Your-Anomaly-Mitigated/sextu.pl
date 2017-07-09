@@ -23,7 +23,7 @@ perl is textual ascii art
 
 =head1 text-based user interfaces
 
-the command-line is (usually) a single line; usually [A] "there is one line (DOTADIW)", but there can be "multiple lines"; either [B] "multiple lines, doing the same thing", or [C] "multiple lines, doing different things"...I'm most interested in C (A ∧ B are non-trivial)
+the command-line is (usually) a single line; usually [A] "there is one line (DOTADIW)", but there can be "multiple lines"; either [B] "multiple lines, doing the same thing", or [C] "multiple lines, doing different things"...I'm most interested in C (A ∧ B are trivial)
 
 the console is everything else; the canvas/dimension/reality
 
