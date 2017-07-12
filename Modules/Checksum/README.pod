@@ -12,9 +12,11 @@ inject checksum at nth line
 
 C<inject($file, $line, $algorithm)>
 
-needs the C<$checksum> value (from C<key_rng()> depending on C<$algorithm>? make it parametrically optional)
+needs the C<$checksum> value (from C<key_rng()> depending on C<$algorithm>? make it parametrically optional) ...is dependant on C<$algorithm>
 
 needs a C<$format> string
+
+maybe also C<rinjectx($file, $regex, $algorithm)>
 
 =head4 checksum()
 
