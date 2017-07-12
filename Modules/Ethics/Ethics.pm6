@@ -11,18 +11,18 @@
 			I haven't even done a single tutorial yet
 			and I'm already hacking away! :D -- JAPH
 		>
-		'DON\'T PANIC;'
+		'DON\'T PANIC'
 		#`{
 			#`(ℝeal PerlX Programmers) use PerlX;
 			ERR: 'Perl is a builtin type, not an external module'
 		}
-		, 'use Perl;'
+		, 'use Perl'
 		# Larry Wall @ 1997
-		, 'prefer things to be visually distinct;'
+		, 'prefer things to be visually distinct'
 		# https://en.wikipedia.org/wiki/Learning_Perl
-		, 'don\'t use indices;'
-		, '..;'
-	].map({"\tℝeal Perl Programmers " ~ $_ ~ "\n"}).join
+		, 'don\'t use indices'
+		, '..'
+	].map({"\tℝeal Perl Programmers " ~ $_ ~ ";\n"}).join
 	~ '=end comment'
 ].map({$_ ~ "\n"}).join
 # ; my $terminal = 'overlapping chars'

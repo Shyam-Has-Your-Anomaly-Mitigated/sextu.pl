@@ -7,7 +7,6 @@
 ; use MONKEY-SEE-NO-EVAL
 ; unit module Keypto
 
-
 ; sub key_gen(Str $csv) is export {
 	; my @line = $csv.IO.lines;
 	# csv header
@@ -20,13 +19,11 @@
 		; @_
 	}(split(',', shift @line).map({; .trim}))
 	; my $charray = 'charray' ∈ @field
-	; my $index
-	; my $outdex
+	; my ($index, $outdex)
 	; if $charray {
-		; $_ = @field.grep('charray', :k)[0]
-		; $outdex = @field - $_ - 1
-		; $index = $_
-		; @field.push: @field.splice($_, 1)
+		; $index = @field.grep('charray', :k)[0]
+		; $outdex = @field -$index -1
+		; @field.push: @field.splice($index, 1)
 	}
 	# csv_liner
 	; $csv ~~ /^(.+)\.csv$/
@@ -35,48 +32,52 @@
 	; my $gen = "LAST RESET @ " ~ DateTime.now ~ $magic
 	; for @line {
 		; my @value_tmp = split(',', $_).map({; .trim})
-		; my @value
-		; if $charray {
-			; @value =
+		; my @value =
+			$charray
+			??
 				$index == 0
 				?? [
-					|@value_tmp.splice(@value_tmp - $outdex, @value_tmp - 1)
+					|@value_tmp.splice(@value_tmp -$outdex, @value_tmp -1)
 					, @value_tmp
 				] !! [
 					|@value_tmp.splice(0, $index)
-					, |@value_tmp.splice(@value_tmp - $outdex, @value_tmp - 1)
+					, |@value_tmp.splice(@value_tmp -$outdex, @value_tmp -1)
 					, @value_tmp
 				]
-		} else {
-			; @value = @value_tmp
-		}
+			!!
+				@value_tmp
+		; my $vallay
 		; if $charray {
-			# WTF
-			; @value[* - 1] = EVAL(@value[* - 1].join(',')).map({; .flat}).flat
+			; @value[* -1] = EVAL(@value[* -1].join(',')).List.flat
+			; if $charray {
+				# WTF WTF
+				; @value[@field.grep('charray', :k)[0]] = @value[@field.grep('charray', :k)[0]].List
+				; $vallay = Nil ∉ @value[@field.grep('charray', :k)[0]]
+			}
 		}
 		# primary key is ':'
 		# key_rng() has \n
 		# @charray is at the end
 		; my @gotcha
-		; if $charray {
-			; @gotcha.push((@field.grep: /^\:$/, :k)[0])
-			; $gen ~= "\n" ~ @value[@gotcha[* - 1]]
-		}
+		; @gotcha.push((@field.grep: /^\:$/, :k)[0])
+		; $gen ~= "\n" ~ @value[@gotcha[* -1]]
 		; @gotcha.push((@field.grep: /^.+\n$/, :k)[0])
-		; $gen ~= "\n\t" ~ @field[@gotcha[* - 1]].chop ~ ': '
+		; $gen ~= "\n\t" ~ @field[@gotcha[* -1]].chop ~ ': '
 		; if 'max' ∈ @field {
 			; @gotcha.push((@field.grep: /^max$/, :k)[0])
 			; $gen ~=
-				$charray
-				?? key_rng(+@value[@gotcha[* - 2]], +@value[@gotcha[* - 1]], @value[* - 1])
-				!! key_rng(+@value[@gotcha[* - 2]], +@value[@gotcha[* - 1]])
+				$vallay
+				?? key_rng(+@value[@gotcha[* -2]], +@value[@gotcha[* -1]], @value[* -1])
+				!! key_rng(+@value[@gotcha[* -2]], +@value[@gotcha[* -1]])
 		} else {
 			; $gen ~=
-				$charray
-				?? key_rng(+@value[@gotcha[* - 1]], +@value[@gotcha[* - 1]], @value[* - 1])
-				!! key_rng(+@value[@gotcha[* - 1]])
+				$vallay
+				?? key_rng(+@value[@gotcha[* -1]], +@value[@gotcha[* -1]], @value[* -1])
+				!! key_rng(+@value[@gotcha[* -1]])
 		}
-		; for 0..@field-2 {; $gen ~= "\n\t@field[$_]: @value[$_]" if $_ ∉ @gotcha}
+		; for 0..@field -($charray?? 2!! 1) {
+			; $gen ~= "\n\t@field[$_]: @value[$_]" if $_ ∉ @gotcha && @value[$_].chars
+		}
 		; $gen ~= $magic
 	}
 	; spurt $key, $gen
@@ -94,6 +95,6 @@
 ) is export {
 	; return
 		0 < $min <= $max
-		?? @char.roll(rand * ($max - $min + 1) + $min).join
+		?? @char.roll(rand ×($max -$min +1) +$min).join
 		!! 'ERR: RTFS!!!' # see~; lazy...
 }
