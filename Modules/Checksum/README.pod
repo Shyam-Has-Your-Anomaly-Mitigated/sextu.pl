@@ -12,6 +12,8 @@ inject checksum at nth line
 
 C<inject($file, $line, $algorithm)>
 
+needs the C<$checksum> value (from C<key_rng()> depending on C<$algorithm>?)
+
 =head4 checksum()
 
 C<checksum($file, $algorithm)>
