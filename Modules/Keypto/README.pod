@@ -119,8 +119,11 @@ B<example:>
 	place, p:key, u:user, e:email, n:name, a:address, phone,..
 	\n%s, \n\t%S: %s
 	github.com, 7-72((1..3),('a'..'b')),..
-	abc.com, 8,..
-	xyz.com, 8,..
+	abc.com, 8-16,..
+	xyz.com, 8-64,..
+	bios, 8,..
+	unix, 8-108,..
+	ransomwarez, 1337,..
 
 =head4 KEY format (output)
 
