@@ -107,7 +107,7 @@ B<C<@formats>:>
 
 =item * B<escape character:> C<0> (zero)
 
-=item * B<escapable sequences:> C<0> (zero), C<,>, C< > (space; spaces are trimmed)
+=item * B<escapable characters:> C<0> (zero), C<,>, C< > (space; spaces are trimmed)
 
 =item * I<cure for the one-true-syntax syndrome (this should be in the Ethics module?)>
 
