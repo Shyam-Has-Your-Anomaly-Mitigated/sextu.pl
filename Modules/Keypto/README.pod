@@ -4,6 +4,8 @@
 
 =head2 road_map
 
+=begin comment
+
 C<key_ing()> (ran$omware)
 
 C<key_cut()>, C<key_tip()>, C<key_bow()>, C<sho_ldr()> (L<anatomy|https://en.wikipedia.org/wiki/Key_(lock)>)
@@ -17,6 +19,8 @@ C<key_pal()> (penpal via email)
 C<key_set()> (instruction-set, but could just be a set of keys)
 
 C<key_way()> (keyhole)
+
+=end comment
 
 =head4 key_ces()
 
@@ -119,11 +123,11 @@ B<example:>
 	place, p:key, u:user, e:email, n:name, a:address, phone,..
 	\n%s, \n\t%S: %s
 	github.com, 7-72((1..3),('a'..'b')),..
-	abc.com, 8-16,..
+	abc.com, 8-16(1..3),..
 	xyz.com, 8-64,..
 	bios, 8,..
 	unix, 8-108,..
-	ransomwarez, 1337,..
+	ransomwarez, 1337(0,1),..
 
 =head4 KEY format (output)
 
