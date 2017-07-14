@@ -8,7 +8,7 @@
 ; unit module Keypto
 
 ; sub key_gen(Str $csv) is export {
-	; my @line = $csv.IO.lines;
+	; my @line = $csv.IO.lines
 	# csv header
 	; my @field = {
 		; for @_ {
@@ -50,7 +50,7 @@
 		; if $charray {
 			; @value[* -1] = EVAL(@value[* -1].join(',')).List.flat
 			; if $charray {
-				# WTF WTF
+				# WTF WTF WTF
 				; @value[@field.grep('charray', :k)[0]] = @value[@field.grep('charray', :k)[0]].List
 				; $vallay = Nil ∉ @value[@field.grep('charray', :k)[0]]
 			}
@@ -83,18 +83,22 @@
 	; spurt $key, $gen
 }
 
-# https://irclog.perlgeek.de/perl6/2017-07-08
-; subset Char of Str where .chars == 1
 # all passwords support alphanumeric, but not all systems support special chars
-# is time secure for rng? no, just leave it! perl is for the lazy...
+# is time secure for rng? no; temporal observations lead to lhermal observations lead to patterns
 ; sub key_rng(
 	UInt $min
-	, UInt $max=$min
-	, @char=(|('0'..'9'), |('a'..'z'), |('A'..'Z'))
-	#, @char=(('0'..'9'), ('a'..'z'), ('A'..'Z')).flat
+	, UInt $max = $min
+	, @charray = (|('0'..'9'), |('a'..'z'), |('A'..'Z'))
 ) is export {
 	; return
 		0 < $min <= $max
-		?? @char.roll(rand ×($max -$min +1) +$min).join
-		!! 'ERR: RTFS!!!' # see~; lazy...
+		?? @charray
+			.map({
+				; .chars == 1 or die
+					"\e[31mERR:\e[0m @charray must be a List of Char...\n\t@charray = @charray[]"
+				; $_
+			})
+			.roll(rand ×($max -$min +1) +$min)
+			.join
+		!! die "\e[31mERR:\e[0m [\$min, \$max] = [$min, $max] | 0 < $min <= $max"
 }
