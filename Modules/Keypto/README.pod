@@ -79,6 +79,8 @@ B<C<$message>:>
 
 =item * this is spliced between everything
 
+=item * B<key_xch():> all occurrences of C<¿> are changed to C<¡>, and all occurrences of C<?> are changed to C<!>
+
 =back
 
 B<C<@headers>:>
@@ -111,7 +113,7 @@ B<C<@formats>:>
 
 B<example:>
 
-	\n\nTIME TO RESET\n
+	\n\n¿¿¿TIME TO RESET???\n
 	place, p:key, u:user, e:email, n:name, a:address, phone,..
 	\n%s, \n\t%S: %s
 	github.com, 7-72((1..3),('a'..'b')),..
