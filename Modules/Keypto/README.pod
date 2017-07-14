@@ -79,7 +79,7 @@ B<C<$message>:>
 
 =item * this is spliced between everything
 
-=item * B<C<key_xch()>:> all occurrences of C<¿> are changed to C<¡>, and all occurrences of C<?> are changed to C<!>
+=item * B<C<key_xch()>:> C<s:g/¿/¡/;s:g/?/!/>
 
 =back
 
