@@ -79,7 +79,7 @@ B<C<$message>:>
 
 =item * this is spliced between everything
 
-=item * B<key_xch():> all occurrences of C<¿> are changed to C<¡>, and all occurrences of C<?> are changed to C<!>
+=item * B<C<key_xch()>:> all occurrences of C<¿> are changed to C<¡>, and all occurrences of C<?> are changed to C<!>
 
 =back
 
@@ -105,9 +105,9 @@ B<C<@formats>:>
 
 =item * if quantity is less than headers, final format will be used for the rest
 
-=item * B<escape character:> C<\>
+=item * B<escape character:> C<0> (zero)
 
-=item * B<escapable sequences:> C<\>, C<,>, C< > (space; spaces are trimmed)
+=item * B<escapable sequences:> C<0> (zero), C<,>, C< > (space; spaces are trimmed)
 
 =item * I<cure for the one-true-syntax syndrome (this should be in the Ethics module?)>
 
