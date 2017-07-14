@@ -105,7 +105,7 @@ B<C<@formats>:>
 
 =item * B<escapable sequences:> C<\>, C<,>, C< > (space; spaces are trimmed)
 
-=item * I<cure for the one true syntax syndrome (this should be in the Ethics module?)>
+=item * I<cure for the one-true-syntax syndrome (this should be in the Ethics module?)>
 
 =back
 
