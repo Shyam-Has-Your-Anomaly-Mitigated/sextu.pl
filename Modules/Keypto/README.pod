@@ -95,7 +95,7 @@ B<C<@headers>:>
 
 =item * B<header format 1:> C<$key_field:$csv_field>, where C<$key_field> is used in the key file, and C<$csv_field> is used descriptively (self-documenting source)
 
-=item * C<$*_field == 'key'??> B<special field:> C<$min-$max($charray)>, where C<-$max> and C<($charray)> are optional
+=item * C<$*_field == 'key'??> B<special field:> C<$min-$max(@charray)>, where C<-$max> and C<(@charray)> are optional
 
 =back
 
@@ -128,7 +128,7 @@ B<example:>
 
 =head2 key_rng()
 
-C<key_rng($min, $max=$min, @char=(...))> returns a random string
+C<key_rng($min, $max=$min, @charray=(...))> returns a random string
 
 C<@char> is all-case alphanumerical by default
 
