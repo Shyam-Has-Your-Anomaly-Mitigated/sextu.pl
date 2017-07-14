@@ -22,7 +22,7 @@
 		# https://en.wikipedia.org/wiki/Learning_Perl
 		, 'don\'t use indices'
 		, '..'
-	].map({"\tℝeal Perl Programmers " ~ $_ ~ ";\n"}).join
+	].map({"\tℝeal Perl Programmers " ~ $_ ~ ", or die;\n"}).join
 	~ '=end comment'
 ].map({$_ ~ "\n"}).join
 # ; my $terminal = 'overlapping chars'
