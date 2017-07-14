@@ -62,7 +62,7 @@ B<...need to change!!! to make this "free" software...>
 
 =head4 CSV format (input)
 
-	$message
+	$message?
 	@headers
 	@formats
 	@record_1
