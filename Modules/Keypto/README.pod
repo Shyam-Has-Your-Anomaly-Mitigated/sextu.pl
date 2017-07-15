@@ -48,9 +48,9 @@ B<input demo:> C<./mold.csv>
 
 B<output demo:> C<./old.key> C<./new.key>
 
-B<CSV format:>
-
 =begin comment
+
+B<CSV format:>
 
 first line is (custom) header; soft-coding means "free software" (but more effort)
 
