@@ -81,7 +81,7 @@
 				; $valdex = @fmt[0].index('%s')
 				; @fmt[0] ~~ s/\%S/%s/
 			}
-			; if $_ == $keydex && $max {
+			; if $_ == $keydex && 0 < $min <= $max {
 				; if $headex && $valdex  {
 					if $headex < $valdex {
 						; $gen ~= sprintf(@fmt[0], @header[$_], (
