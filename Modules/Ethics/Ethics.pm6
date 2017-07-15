@@ -1,7 +1,7 @@
 #!/usr/bin/env perl6
-; use v6
+; use v6.c
 ; unit module Ethics
-; $_ = [
+; print [
 	'#!/usr/bin/env perl6'
 	, '#`[ℝeal Perl Programmers] use Ethics;'
 	, '=begin comment'
@@ -21,10 +21,16 @@
 		, 'prefer things to be visually distinct'
 		# https://en.wikipedia.org/wiki/Learning_Perl
 		, 'don\'t use indices'
-		, '..'
+		# ; my $TMTOWTDI = 'There's More Than One Way To Do It'
+		, 'know Tim Toady'
+		# ; my $TOTSS = 'The One-True-Syntax Syndrome'
+		, 'don\'t have TOTSS'
+		# recursion
+		, 'use Ethics'
 	].map({"\tℝeal Perl Programmers " ~ $_ ~ ", or die;\n"}).join
 	~ '=end comment'
-].map({$_ ~ "\n"}).join
-# ; my $terminal = 'overlapping chars'
-; s:g/ℝ/R/
-; .print
+].map({
+	# ; my $terminal = 'overlapping chars'
+	; s:g/ℝ/R/
+	; $_ ~ "\n"
+}).join

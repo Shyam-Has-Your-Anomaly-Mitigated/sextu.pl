@@ -3,7 +3,7 @@
 	TODO @ key_rng: Char @char
 	WTF I found another viminal
 >
-; use v6
+; use v6.c
 ; use MONKEY-SEE-NO-EVAL
 ; unit module Keypto
 
