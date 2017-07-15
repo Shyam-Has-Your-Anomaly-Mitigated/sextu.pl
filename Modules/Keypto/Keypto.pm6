@@ -81,7 +81,7 @@
 				; $valdex = @fmt[0].index('%s')
 				; @fmt[0] ~~ s/\%S/%s/
 			}
-			; if $_ == $keydex && @value[$_] && $max {
+			; if $_ == $keydex && $max {
 				; if $headex && $valdex  {
 					if $headex < $valdex {
 						; $gen ~= sprintf(@fmt[0], @header[$_], (
@@ -116,30 +116,6 @@
 					; $gen ~= sprintf(@fmt[0], @header[$_])
 				} else {
 					; $gen ~= sprintf(@fmt[0], @value[$_])
-				}
-			} elsif $_ == $keydex && !@value[$_] && $max {
-				; if $headex && $valdex  {
-					if $headex < $valdex {
-						; $gen ~= sprintf(@fmt[0], @header[$_], (
-							@charray != [Any]
-							?? key_rng($min, $max, @charray)
-							!! key_rng($min, $max)
-						))
-					} else {
-						; $gen ~= sprintf(@fmt[0], (
-							@charray != [Any]
-							?? key_rng($min, $max, @charray)
-							!! key_rng($min, $max)
-						), @header[$_])
-					}
-				} elsif $headex {
-					; $gen ~= sprintf(@fmt[0], @header[$_])
-				} else {
-					; $gen ~= sprintf(@fmt[0], (
-						@charray != [Any]
-						?? key_rng($min, $max, @charray)
-						!! key_rng($min, $max)
-					))
 				}
 			}
 			; if 1 < +@fmt {; shift @fmt}
