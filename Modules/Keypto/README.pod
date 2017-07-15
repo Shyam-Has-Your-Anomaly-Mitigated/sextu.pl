@@ -146,5 +146,5 @@ B<example:>
 
 C<key_rng($min, $max=$min, @charray=(...))> returns a random string
 
-C<@char> is all-case alphanumerical by default
+C<@charray> is all-case alphanumerical by default
 
