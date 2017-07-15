@@ -50,6 +50,8 @@ B<output demo:> C<./old.key> C<./new.key>
 
 B<CSV format:>
 
+=begin comment
+
 first line is (custom) header; soft-coding means "free software" (but more effort)
 
 field headers are case-insensitively alphabetic (collision-prone)
@@ -63,6 +65,8 @@ optional field: C<max>
 special optional field: C<charray> (the only multi-valued field)
 
 B<...need to change!!! to make this "free" software...>
+
+=end comment
 
 =head4 CSV format (input)
 
@@ -109,9 +113,13 @@ B<C<@formats>:>
 
 =item * if quantity is less than headers, final format will be used for the rest
 
+=begin comment
+
 =item * B<escape character:> C<0> (zero)
 
 =item * B<escapable characters:> C<0> (zero), C<,>, C< > (space; spaces are trimmed)
+
+=end comment
 
 =item * I<cure for the one-true-syntax syndrome (this should be in the Ethics module?)>
 
@@ -120,14 +128,15 @@ B<C<@formats>:>
 B<example:>
 
 	\n\n¿¿¿TIME TO RESET???\n
-	place, p:key, u:user, e:email, n:name, a:address, phone,..
+	place, p:key, u:user, e:email, n:name, a:address, phone
 	\n%s, \n\t%S: %s
-	github.com, 7-72((1..3),('a'..'b')),..
-	abc.com, 8-16(1..3),..
-	xyz.com, 8-64,..
-	bios, 8,..
-	unix, 8-108,..
-	ransomwarez, 1337(0,1),..
+	a.web, 7-72((1..3),('a'..'c')), user_a, email_a, name_a, address_a, phone_a
+	b.web, 8-16(1..3), user_b, email_b, name_b, address_b, phone_b
+	c.web, 8-64, user_c, email_c, name_c, address_c, phone_c
+	bios_d, 8, user_d, email_d, name_d, address_d, phone_d
+	unix_e, 8-108, user_e, email_e, name_e, address_e, phone_e
+	ransomwarez_f, 1337(0,1), user_f, email_f, name_f, address_f, phone_f
+	missing_key_g,, user_g, email_g, name_g, address_g, phone_g
 
 =head4 KEY format (output)
 
