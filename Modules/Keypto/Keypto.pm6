@@ -83,7 +83,7 @@
 			}
 			; if $_ == $keydex && 0 < $min <= $max {
 				; if $headex && $valdex  {
-					if $headex < $valdex {
+					; if $headex < $valdex {
 						; $gen ~= sprintf(@fmt[0], @header[$_], (
 							@charray != [Any]
 							?? key_rng($min, $max, @charray)
@@ -96,10 +96,8 @@
 							!! key_rng($min, $max)
 						), @header[$_])
 					}
-				} elsif $headex {
-					; $gen ~= sprintf(@fmt[0], @header[$_])
 				} else {
-					; $gen ~= sprintf(@fmt[0], (
+					; $gen ~= sprintf(@fmt[0], $headex?? @header[$_]!! (
 						@charray != [Any]
 						?? key_rng($min, $max, @charray)
 						!! key_rng($min, $max)
@@ -107,15 +105,13 @@
 				}
 			} elsif @value[$_] {
 				; if $headex && $valdex  {
-					if $headex < $valdex {
+					; if $headex < $valdex {
 						; $gen ~= sprintf(@fmt[0], @header[$_], @value[$_])
 					} else {
 						; $gen ~= sprintf(@fmt[0], @value[$_], @header[$_])
 					}
-				} elsif $headex {
-					; $gen ~= sprintf(@fmt[0], @header[$_])
 				} else {
-					; $gen ~= sprintf(@fmt[0], @value[$_])
+					; $gen ~= sprintf(@fmt[0], $headex?? @header[$_]!! @value[$_])
 				}
 			}
 			; if 1 < +@fmt {; shift @fmt}
@@ -136,8 +132,7 @@
 		0 < $min <= $max
 		?? @charray
 			.map({
-				; .chars == 1 or die
-					"\e[31mERR:\e[0m @charray must be a List of Char...\n\t@charray = @charray[]"
+				; .chars == 1 or die "\e[31mERR:\e[0m @charray must be a List of Char...\n\t@charray = @charray[]"
 				; $_
 			})
 			.roll(rand ×($max -$min +1) +$min)
