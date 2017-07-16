@@ -1,0 +1,53 @@
+=encoding utf8
+
+=head1 L<Tool|https://en.wikipedia.org/wiki/Programming_tool>
+
+None of these modules are intended for use by JAPHs; only the accompanying demodulated scripts are designed for JAPHs (Dev-centred design).
+
+L<Programming language specification|https://en.wikipedia.org/wiki/Programming_language_specification>, L<Programming language reference|https://en.wikipedia.org/wiki/Programming_language_reference>
+
+=head2 L<Code Caddy|https://en.wikipedia.org/wiki/Code_golf>
+
+B<Usage:> C<./m *.p6 *.pl6 *.pm6 *.pod6>
+
+Yep, just give C<m> a list of files, and I<away> C<m> goes!
+
+...
+
+So L<min|https://en.wikipedia.org/wiki/Minification_(programming)> that C<m>'s represented by a single Char; even without a file extension!
+
+ℝeal Perl Programmers don't wa$te bandwidth; which explains Perls reputation as an unreadable language. (This should be in Ethics? After I finish, and can undo, C<m>...and become a ℝeal Perl Programmer!!! :D)
+
+The opposite of C<m> is either C<w.p6>, or C<nn.p6>; I prefer C<nn.p6>, as it's an expansion, rather than a mirror, or a 180° rotation.
+
+...
+
+Need to use a language specification file that can be automatically reverse engineered by C<nn.p6>.
+
+These should probably be modulated so the module can store the language/config files locally; for now there's only C<m>.
+
+=head2 L<Superluminal Source|https://en.wikipedia.org/wiki/Reverse_engineering>
+
+L<Programming Style|https://en.wikipedia.org/wiki/Programming_style>, L<Beautification|https://en.wikipedia.org/wiki/Beautification>, L<Prettyprint|https://en.wikipedia.org/wiki/Prettyprint>, L<Formatted text|https://en.wikipedia.org/wiki/Formatted_text>
+
+B<Usage:> C<./nn.p6 *.p6 *.pl6 *.pm6 *.pod6>
+
+Requires a L<configuration file|https://en.wikipedia.org/wiki/Coding_conventions>...
+
+C<./nn.p6 --cfg file=$file lang=$lang name=$name>
+
+file extension and shebang line from C<$file> will be used by default, other the user can specify the language from C<$lang> (if extension/shebang throw an ERR containing known extensions/shebangs); and if multiple CFGs exist, the user can specify the identifier from C<$name> (ERR will contain a list of available IDs).
+
+C<./nn.p6 --cfg>
+
+Displays an ERR message listing extensions, shebangs, languages, and tags.
+
+...
+
+L<case converstions|https://en.wikipedia.org/wiki/Naming_convention_(programming)>: snake_case, VARCAPS_CASE, lisp-case, Train-Case, camelCase, PascalCase, L<lower case, UPPER CASE|https://en.wikipedia.org/wiki/Letter_case>
+
+but what about mixed; CONSTANTS and variables? I did it in the L<future|https://en.wikipedia.org/wiki/Hungarian_notation>, so I can finally do it now!
+
+...
+
+L<indentation conversions|https://en.wikipedia.org/wiki/Indent_style>: L<elastic tabstops|https://en.wikipedia.org/wiki/Tab_stop#Elastic_tabstops>

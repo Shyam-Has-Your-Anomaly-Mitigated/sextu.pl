@@ -1,0 +1,12 @@
+#!/usr/bin/env perl6
+; use v6.c
+; @*ARGS.map({
+	; my Str @line = .IO.lines
+	# WTF .trim
+	; @line.map({; s/^\s*||\s*$//})
+	# totez lazy namez
+	; s/^(.*\/)?(.*)$//
+	; my $m = "m.$1"
+	; spurt $m, @line.join("\n")
+	; say ($0?? $0!! './') ~ "\n<--   $1 \n--> $m"
+})
