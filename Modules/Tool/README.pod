@@ -44,7 +44,7 @@ Displays an ERR message listing extensions, shebangs, languages, and tags.
 
 ...
 
-L<case converstions|https://en.wikipedia.org/wiki/Naming_convention_(programming)>: snake_case, VARCAPS_CASE, lisp-case, Train-Case, camelCase, PascalCase, L<lower case, UPPER CASE|https://en.wikipedia.org/wiki/Letter_case>
+L<case converstions|https://en.wikipedia.org/wiki/Naming_convention_(programming)>: snake_case, Metro_Case, L<VARCAPS_CASE|http://pingx.net/freenode/bash/2010/4/6/5>, lisp-case, Train-Case, COBOL-CASE, camelCase, PascalCase, L<lower case, UPPER CASE|https://en.wikipedia.org/wiki/Letter_case>
 
 but what about mixed; CONSTANTS and variables? I did it in the L<future|https://en.wikipedia.org/wiki/Hungarian_notation>, so I can finally do it now!
 
