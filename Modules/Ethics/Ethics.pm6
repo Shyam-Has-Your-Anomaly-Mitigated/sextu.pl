@@ -19,6 +19,8 @@
 		, 'use Perl'
 		# Larry Wall @ 1997
 		, 'prefer things to be visually distinct'
+		# Larry Wall @ 1990
+		, 'can write assembly code in any language'
 		# https://en.wikipedia.org/wiki/Learning_Perl
 		, 'don\'t use indices'
 		# ; my $TMTOWTDI = 'There's More Than One Way To Do It'
