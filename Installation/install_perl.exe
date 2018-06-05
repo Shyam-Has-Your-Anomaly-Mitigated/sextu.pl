@@ -61,6 +61,7 @@ main() {
 		R E B O O T I N G . . . '' '' '' '' '' '' '' '' ''\
 		"\033c\033[30;40m\033[2J";
 	send '' '' "$@";
+	xrandr --output "$(xrandr -q|grep \ connected|cut -f1 -d' ')" --brightness 0;
 }
 
 # recursive messenger function accepts parametric side effects & message array
